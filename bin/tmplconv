@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+/**
+ * CLI script for tmplconv.js
+ */
+
+"use strict";
+
+var program = require('commander'),
+    pkg = require('../package'),
+    tmplconv = require('../lib');
+
+program
+    .version(pkg['version'])
+    .parse(process.argv);
+
+tmplconv(program, function (err) {
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    } else{
+        process.exit(0);
+    }
+});
