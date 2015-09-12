@@ -1,7 +1,7 @@
 {
   "name": "tmplconv",
   "version": "1.0.1",
-  "description": "Share project to remote git repo.",
+  "description": "Two way template converter.",
   "main": "lib",
   "bin": {
     "tmplconv": "bin/tmplconv"

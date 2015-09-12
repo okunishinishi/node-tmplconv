@@ -28,7 +28,7 @@ tmplconv
 <!-- Description Start -->
 <a name="description"></a>
 
-Share project to remote git repo.
+Two way template converter.
 
 <!-- Description End -->
 
@@ -57,22 +57,38 @@ Usage
 ---------
 
 ```javascript
+var tmplconv = require('tmplconv');
+
+tmplconv.tmplify('asset/app-tmpl', 'demo/demo-app', {
+    data: {
+        'name': 'my-awesome-app',
+        'description': "This is an example for the app templates."
+    }
+}, function (err) {
+    /*...*/
+});
+
+```
+
+```javascript
+var tmplconv = require('tmplconv');
+
+tmplconv.tmplify('demo/demo-app', 'asset/app-tmpl', {
+    pattern: [
+        'lib/*.js',
+        'test/*_test.js'
+    ],
+    data: {
+        'name': 'my-awesome-app',
+        'description': "This is an example for the app templates."
+    }
+}, function (err) {
+    /*...*/
+});
 
 ```
 
 <!-- Section from "doc/readme/02.Usage.md.hbs" End -->
-
-<!-- Section from "doc/readme/03.Options.md.hbs" Start -->
-
-<a name="section-doc-readme-03-options-md"></a>
-Options
----------
-
-| Key | Default | Description |
-| --- | --- | --- |
-| origin | _detectOrigin() | Git remote origin url. |
-
-<!-- Section from "doc/readme/03.Options.md.hbs" End -->
 
 <!-- Section from "doc/readme/04.CLI.md.hbs" Start -->
 
