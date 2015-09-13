@@ -56,6 +56,8 @@ npm install tmplconv --save-dev
 Usage
 ---------
 
+### Render Example
+
 ```javascript
 var tmplconv = require('tmplconv');
 
@@ -69,6 +71,24 @@ tmplconv.tmplify('asset/app-tmpl', 'demo/demo-app', {
 });
 
 ```
+
+### Render Options
+
+| Key | Default | Description |
+| --- | --- | --- |
+| data |  | Name or path of data module. |
+| pattern | '**/*.*' | File name patterns |
+| ignore |  | File name patterns to ignore |
+| prefix | '_____' | Embed prefix |
+| suffix | '_____' | Embed suffix |
+| extname | '.tmpl' | Embed Template extension name |
+| silent |  | Disable console logs |
+| clean |  | Cleanup destination directory before convert |
+| once |  | Write only first time. Skip if already exists |
+
+
+
+### Tmplify Example
 
 ```javascript
 var tmplconv = require('tmplconv');
@@ -87,6 +107,10 @@ tmplconv.tmplify('demo/demo-app', 'asset/app-tmpl', {
 });
 
 ```
+
+### Tmplify options
+| Key | Default | Description |
+| --- | --- | --- |
 
 <!-- Section from "doc/readme/02.Usage.md.hbs" End -->
 

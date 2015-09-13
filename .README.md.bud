@@ -18,7 +18,10 @@ module.exports = apeTmpl.readmeMdBud({
         gemnasium: false,
         npm: true
     },
-    links: null
+    links: null,
+    vars: {
+        signature: require('./signature.json')
+    }
 });
 
 if (!module.parent) {

@@ -11,7 +11,8 @@ var program = require('commander'),
     tmplconv = require('../lib');
 
 program
-    .version(pkg['version']);
+    .version(pkg['version'])
+    .description(pkg['description']);
 
 //=========================
 // Handle `tmplify` command
@@ -27,7 +28,7 @@ program
     .option('-e, --extname <extname>', "Embed Template extension name")
     .option('-s, --silent', "Disable console logs")
     .option('-c, --clean', "Cleanup destination directory before convert")
-    .option('-n, --clean', "Write only first time. Skip if already exists")
+    .option('-n, --once', "Write only first time. Skip if already exists")
     .action(function act(srcDir, destDir, options) {
         tmplconv.tmplify(srcDir, destDir, options, _done);
     });
@@ -40,6 +41,9 @@ program
     .action(function act(srcDir, destDir, options) {
         tmplconv.render(srcDir, destDir, options, _done);
     });
+
+program.parse(process.argv);
+
 
 /** When command done. */
 function _done(err) {

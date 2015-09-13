@@ -1,10 +1,29 @@
 Usage
 ---------
 
+### Render Example
+
 ```javascript
 {{{read 'example/example-render.js'}}}
 ```
 
+### Render Options
+
+| Key | Default | Description |
+| --- | --- | --- |
+{{#each vars.signature.commands.0.options}}| {{{name}}} | {{{default}}} | {{{desc}}} |
+{{/each}}
+
+
+
+### Tmplify Example
+
 ```javascript
 {{{read 'example/example-tmplify.js'}}}
 ```
+
+### Tmplify options
+| Key | Default | Description |
+| --- | --- | --- |
+{{#each vars.signature.commands.1.options}}| {{{name}}} | {{{default}}} | {{{desc}}} |
+{{/each}}
