@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * CLI script for tmplconv.js
+ * Command line interface of tmplconv.
  */
 
 "use strict";
@@ -17,36 +17,31 @@ program
 // Handle `tmplify` command
 //=========================
 program
-    .command("tmplify <srcDir> <destDir>")
-    .description("Generate template from rendered.")
-    .option('-d, --data <data>', "Data json file path")
-    .option('-p, --pattern <pattern>', "File name patterns", '**/*.*')
-    .option('-P, --prefix <prefix>', "Embed prefix", '_____')
-    .option('-S, --suffix <suffix>', "Embed suffix", '_____')
-    .option('-e, --extname <extname>', "Embed Template extension name", '.tmpl')
+    .command("tmplify <srcDir> <destDir> ")
+    .description("Generate a template from existing files")
+    .option('-d, --data <data>', "Name or path of data module.")
+    .option('-p, --pattern <pattern>', "File name patterns")
+    .option('-i, --ignore <ignore>', "File name patterns to ignore")
+    .option('-P, --prefix <prefix>', "Embed prefix")
+    .option('-S, --suffix <suffix>', "Embed suffix")
+    .option('-e, --extname <extname>', "Embed Template extension name")
     .option('-s, --silent', "Disable console logs")
-    .action(function (srcDir, destDir, opitons) {
-        tmplconv.tmplify(srcDir, destDir, opitons, _done);
+    .option('-c, --clean', "Cleanup destination directory before convert")
+    .option('-n, --clean', "Write only first time. Skip if already exists")
+    .action(function act(srcDir, destDir, options) {
+        tmplconv.tmplify(srcDir, destDir, options, _done);
     });
-
 //=========================
 // Handle `render` command
 //=========================
 program
-    .command("render <srcDir> <destDir>")
-    .description("Render template.")
-    .option('-d, --data <data>', "Data json file path")
-    .option('-p, --pattern <pattern>', "File name patterns", '**/*.*')
-    .option('-P, --prefix <prefix>', "Embed prefix", '_____')
-    .option('-S, --suffix <suffix>', "Embed suffix", '_____')
-    .option('-e, --extname <extname>', "Embed Template extension name", '.tmpl')
-    .option('-s, --silent', "Disable console logs")
-    .action(function (srcDir, destDir, opitons) {
-        tmplconv.render(srcDir, destDir, opitons, _done);
+    .command("render <srcDir> <destDir> ")
+    .description("")
+    .action(function act(srcDir, destDir, options) {
+        tmplconv.render(srcDir, destDir, options, _done);
     });
 
-
-
+/** When command done. */
 function _done(err) {
     if (err) {
         console.error(err);
