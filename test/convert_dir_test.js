@@ -26,7 +26,9 @@ exports.tearDown = function (done) {
 };
 
 exports['Convert dir'] = function (test) {
-    convertDir(__dirname, tmpDir + '/baz', '*.js', {}, function (err) {
+    convertDir(__dirname, tmpDir + '/baz', {
+        pattern: '*.*'
+    }, function (err) {
         test.ifError(err);
         test.done();
     });

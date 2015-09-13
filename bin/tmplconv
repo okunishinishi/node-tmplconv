@@ -11,14 +11,49 @@ var program = require('commander'),
     tmplconv = require('../lib');
 
 program
-    .version(pkg['version'])
-    .parse(process.argv);
+    .version(pkg['version']);
 
-tmplconv(program, function (err) {
+//=========================
+// Handle `tmplify` command
+//=========================
+program
+    .command("tmplify <srcDir> <destDir>")
+    .description("Generate template from rendered.")
+    .option('-d, --data <data>', "Data json file path")
+    .option('-p, --pattern <pattern>', "File name patterns", '**/*.*')
+    .option('-P, --prefix <prefix>', "Embed prefix", '_____')
+    .option('-S, --suffix <suffix>', "Embed suffix", '_____')
+    .option('-e, --extname <extname>', "Embed Template extension name", '.tmpl')
+    .option('-s, --silent', "Disable console logs")
+    .action(function (srcDir, destDir, opitons) {
+        tmplconv.tmplify(srcDir, destDir, opitons, _done);
+    });
+
+//=========================
+// Handle `render` command
+//=========================
+program
+    .command("render <srcDir> <destDir>")
+    .description("Render template.")
+    .option('-d, --data <data>', "Data json file path")
+    .option('-p, --pattern <pattern>', "File name patterns", '**/*.*')
+    .option('-P, --prefix <prefix>', "Embed prefix", '_____')
+    .option('-S, --suffix <suffix>', "Embed suffix", '_____')
+    .option('-e, --extname <extname>', "Embed Template extension name", '.tmpl')
+    .option('-s, --silent', "Disable console logs")
+    .action(function (srcDir, destDir, opitons) {
+        tmplconv.render(srcDir, destDir, opitons, _done);
+    });
+
+
+
+function _done(err) {
     if (err) {
         console.error(err);
         process.exit(1);
-    } else{
+    } else {
         process.exit(0);
     }
-});
+}
+
+program.parse(process.argv);

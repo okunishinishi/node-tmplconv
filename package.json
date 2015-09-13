@@ -30,9 +30,10 @@
     "colorprint": "^1.1.2",
     "commander": "^2.8.1",
     "execcli": "^2.1.1",
-    "expandglob": "^1.0.0",
+    "expandglob": "^1.0.1",
     "findout": "^1.1.2",
     "mkdirp": "^0.5.1",
+    "rimraf": "^2.4.3",
     "stringcase": "^1.2.5",
     "writeout": "^1.2.1"
   },
