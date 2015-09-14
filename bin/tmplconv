@@ -17,6 +17,7 @@ program
 //=========================
 // Handle `tmplify` command
 //=========================
+
 program
     .command("tmplify <srcDir> <destDir> ")
     .description("Generate a template from existing files")
@@ -29,18 +30,53 @@ program
     .option('-s, --silent', "Disable console logs")
     .option('-c, --clean', "Cleanup destination directory before convert")
     .option('-n, --once', "Write only first time. Skip if already exists")
+    .option('-m, --mode', "File permission to generate")
     .action(function act(srcDir, destDir, options) {
         tmplconv.tmplify(srcDir, destDir, options, _done);
     });
+
+
 //=========================
 // Handle `render` command
 //=========================
+
 program
     .command("render <srcDir> <destDir> ")
     .description("")
+    .option('-d, --data <data>', "Name or path of data module.")
+    .option('-p, --pattern <pattern>', "File name patterns")
+    .option('-i, --ignore <ignore>', "File name patterns to ignore")
+    .option('-P, --prefix <prefix>', "Embed prefix")
+    .option('-S, --suffix <suffix>', "Embed suffix")
+    .option('-e, --extname <extname>', "Embed Template extension name")
+    .option('-s, --silent', "Disable console logs")
+    .option('-c, --clean', "Cleanup destination directory before convert")
+    .option('-n, --once', "Write only first time. Skip if already exists")
+    .option('-m, --mode', "File permission to generate")
     .action(function act(srcDir, destDir, options) {
         tmplconv.render(srcDir, destDir, options, _done);
     });
+
+
+//=========================
+// Handle `transplant` command
+//=========================
+
+program
+    .command("transplant <src> <dest> ")
+    .description("Tmplify and render at once")
+    .option('-, --rule', "Rule for convert")
+    .option('-p, --pattern <pattern>', "File name patterns")
+    .option('-i, --ignore <ignore>', "File name patterns to ignore")
+    .option('-s, --silent', "Disable console logs")
+    .option('-c, --clean', "Cleanup destination directory before convert")
+    .option('-n, --once', "Write only first time. Skip if already exists")
+    .option('-m, --mode', "File permission to generate")
+    .action(function act(src, dest, options) {
+        tmplconv.transplant(src, dest, options, _done);
+    });
+
+
 
 program.parse(process.argv);
 

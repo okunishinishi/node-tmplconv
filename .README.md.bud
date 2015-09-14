@@ -5,6 +5,7 @@
 "use strict";
 
 var apeTmpl = require('ape-tmpl'),
+    childProcess = require('child_process'),
     pkg = require('./package.json');
 
 module.exports = apeTmpl.readmeMdBud({
@@ -19,8 +20,16 @@ module.exports = apeTmpl.readmeMdBud({
         npm: true
     },
     links: null,
+    overview: 'doc/overview.md',
     vars: {
-        signature: require('./signature.json')
+        signature: require('./signature.json'),
+        cli: {
+            get help() {
+                var execSync = childProcess.execSync;
+                var bin = require.resolve('./bin/tmplconv');
+                return execSync && execSync(bin + ' -h');
+            }
+        }
     }
 });
 

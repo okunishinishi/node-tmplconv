@@ -33,6 +33,30 @@ Two way template converter.
 <!-- Description End -->
 
 
+<!-- Overview Start -->
+<a name="overview"></a>
+
+**my_awesome_func.js**
+```
+function myAwesomeFunc () {
+    /*...*/
+}
+```
+
+&nbsp;&nbsp;   &darr;&darr;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &uarr;&uarr;
+Render  &nbsp;&nbsp;  Tmplify
+&nbsp;&nbsp;   &darr;&darr;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &uarr;&uarr;
+
+**____name<span></span>@snakecase____.js.tmpl**
+
+```
+function ____name@camelcase____ () {
+    /*...*/
+}
+```
+
+
+<!-- Overview End -->
 
 
 <!-- Sections Start -->
@@ -50,13 +74,11 @@ npm install tmplconv --save-dev
 
 <!-- Section from "doc/readme/01.Installation.md.hbs" End -->
 
-<!-- Section from "doc/readme/02.Usage.md.hbs" Start -->
+<!-- Section from "doc/readme/02.Render.md.hbs" Start -->
 
-<a name="section-doc-readme-02-usage-md"></a>
-Usage
+<a name="section-doc-readme-02-render-md"></a>
+Render
 ---------
-
-### Render Example
 
 ```javascript
 var tmplconv = require('tmplconv');
@@ -72,7 +94,7 @@ tmplconv.render('asset/app-tmpl', 'demo/demo-app', {
 
 ```
 
-### Render Options
+##### Render Options
 
 | Key | Default | Description |
 | --- | --- | --- |
@@ -85,10 +107,16 @@ tmplconv.render('asset/app-tmpl', 'demo/demo-app', {
 | silent |  | Disable console logs |
 | clean |  | Cleanup destination directory before convert |
 | once |  | Write only first time. Skip if already exists |
+| mode | '644' | File permission to generate |
 
 
+<!-- Section from "doc/readme/02.Render.md.hbs" End -->
 
-### Tmplify Example
+<!-- Section from "doc/readme/03.Templify.md.hbs" Start -->
+
+<a name="section-doc-readme-03-templify-md"></a>
+Templify
+---------
 
 ```javascript
 var tmplconv = require('tmplconv');
@@ -108,11 +136,21 @@ tmplconv.tmplify('demo/demo-app', 'asset/app-tmpl', {
 
 ```
 
-### Tmplify options
+##### Tmplify options
 | Key | Default | Description |
 | --- | --- | --- |
+| data |  | Name or path of data module. |
+| pattern | '**/*.*' | File name patterns |
+| ignore |  | File name patterns to ignore |
+| prefix | '_____' | Embed prefix |
+| suffix | '_____' | Embed suffix |
+| extname | '.tmpl' | Embed Template extension name |
+| silent |  | Disable console logs |
+| clean |  | Cleanup destination directory before convert |
+| once |  | Write only first time. Skip if already exists |
+| mode | '644' | File permission to generate |
 
-<!-- Section from "doc/readme/02.Usage.md.hbs" End -->
+<!-- Section from "doc/readme/03.Templify.md.hbs" End -->
 
 <!-- Section from "doc/readme/04.CLI.md.hbs" Start -->
 
@@ -126,10 +164,28 @@ Install as a global module.
 $ npm install tmplconv -g
 ```
 
-Then,
+#### CLI Usage:
 
 ```bash
-$ tmplconv
+$ tmplconv -h
+
+  Usage: tmplconv [options] [command]
+
+
+  Commands:
+
+    tmplify [options] <srcDir> <destDir>  Generate a template from existing files
+    render [options] <srcDir> <destDir>   
+    transplant [options] <src> <dest>     Tmplify and render at once
+
+  Two way template converter.
+
+  Options:
+
+    -h, --help     output usage information
+    -V, --version  output the version number
+
+
 ```
 <!-- Section from "doc/readme/04.CLI.md.hbs" End -->
 
