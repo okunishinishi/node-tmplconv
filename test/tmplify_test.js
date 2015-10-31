@@ -18,7 +18,7 @@ exports.tearDown = function (done) {
 };
 
 exports['Tmplify'] = function (test) {
-    var srcDir = __dirname + '/../doc/mockups/mock-app',
+    var srcDir = __dirname + '/../doc/mocks/mock-app',
         destDir = tmpDir + '/testing-tmpl/mock-app-tmpl';
     tmplify(srcDir, destDir, {
         data: {

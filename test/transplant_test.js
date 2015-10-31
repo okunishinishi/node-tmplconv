@@ -15,7 +15,7 @@ exports.setUp = function (done) {
 
 
 exports['Transplant'] = function(test){
-    var srcDir = __dirname + '/../doc/mockups/mock-app',
+    var srcDir = __dirname + '/../doc/mocks/mock-app',
         destDir = tmpDir + '/testing-transplanted/mock-app-transplanted';
     transplant(srcDir, destDir, {
         rule: {

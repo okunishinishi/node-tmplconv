@@ -15,7 +15,7 @@ exports.setUp = function (done) {
 
 
 exports['Render'] = function(test){
-    var srcDir = __dirname + '/../doc/mockups/mock-app-tmpl',
+    var srcDir = __dirname + '/../doc/mocks/mock-app-tmpl',
         destDir = tmpDir + '/testing-render/mock-app-generated';
     render(srcDir, destDir, {
         data: {
