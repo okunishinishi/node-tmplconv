@@ -1,7 +1,8 @@
 language: node_js
 node_js:
 - '0.11'
-before_install: 
+before_install:
+- npm install nodeunit istanbul -g
 install:
 - npm install
 before_script:
@@ -11,6 +12,3 @@ script:
 - ./ci/test.js
 - ./ci/cover.js
 - ./ci/report.js
-env:
-  global:
-    secure: JBSa7OV0C5px+j2QjG3Kdzqcqrk5zFSPFnzxRbvRN6SXAG+mmcNdH6NYz7ggEcWi5vHrA6b72i0Ee+z/yUk8oupbKRczpHvSN4Kdywy+HBRkgAT1uwXLmwuWvnTcQHXoLKMraLyEwj1YhDJAuCZqgwU76qujoyEzjMmbEb8YoL1H6Gh9HDpaypJLBjxefFZQJM8Hfyw3kngDuj7qqiBWQ1hswLYKD62Lwkyr60nI8ovU3LPYoqbZ1HSjCn82wcPRfc9mbSdN84h00umfMSW96Uc5lsxhbE+0WcJYPg9m/7UJEG3uXMfsZkkLDhRBgdHObUQLUnBKL+uQCaB1Bzo/c6BWIquQezvQcTX2hmuzip3IM3vHnum3hdSA0xoQ3YR8gj0TWpcF0cMz+CZWoQb3fom1w0HZevME3/ZpjTskNXl0TEzoOb3tb7+oY49J5QZxapcfr8xFVykkXa6vJPyaXO+n8o0tYpya/PfO9+nPqDMF15qEOoWHJICAF5idDNmw0IMS+htjdtN4Uz7fJXxBlKZm7AZXqSc2c7l7Z5WPzxcNoZB428ZmPSgKMOqOblTdabP8QfI++ml6PMr2+U1OGJFmn4ffnHFRdN3eLuZdb0wfIgwKRdPUBZe3YtHiML1IC4m1LbRgPUnk/1KsxkAwLxPy9V9PLAqMiZN6Pn7c4JI=
