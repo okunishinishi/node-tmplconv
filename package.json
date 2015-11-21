@@ -1,6 +1,6 @@
 {
   "name": "tmplconv",
-  "version": "1.0.5",
+  "version": "2.0.1",
   "description": "Two way template converter.",
   "main": "lib",
   "bin": {
