@@ -2,11 +2,11 @@
  * Test case for transplant.
  * Runs with nodeunit.
  */
-
-var transplant = require('../lib/transplant.js'),
+"use strict";
+const transplant = require('../lib/transplant.js'),
     mkdirp = require('mkdirp');
 
-var tmpDir = __dirname + '/../tmp';
+const tmpDir = __dirname + '/../tmp';
 
 exports.setUp = function (done) {
     mkdirp.sync(tmpDir);
@@ -22,7 +22,7 @@ exports['Transplant'] = function(test){
             "my-awesome-app":"hey-yo",
             "This is an example for the app templates.":"This transplanted template"
         }
-    }, function (err) {
+    }, (err) => {
         test.ifError(err);
         test.done();
     });

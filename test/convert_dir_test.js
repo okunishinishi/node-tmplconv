@@ -2,11 +2,12 @@
  * Test case for convertDir.
  * Runs with nodeunit.
  */
+"use strict";
 
-var convertDir = require('../lib/converting/convert_dir.js'),
+const convertDir = require('../lib/converting/convert_dir.js'),
     mkdirp = require('mkdirp');
 
-var tmpDir = __dirname + '/../tmp';
+const tmpDir = __dirname + '/../tmp';
 
 exports.setUp = function (done) {
     mkdirp.sync(tmpDir);
@@ -28,7 +29,7 @@ exports.tearDown = function (done) {
 exports['Convert dir'] = function (test) {
     convertDir(__dirname, tmpDir + '/baz', {
         pattern: '*.*'
-    }, function (err) {
+    }, (err) => {
         test.ifError(err);
         test.done();
     });

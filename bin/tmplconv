@@ -7,7 +7,7 @@
 
 "use strict";
 
-var program = require('commander'),
+const program = require('commander'),
     pkg = require('../package'),
     tmplconv = require('../lib');
 
@@ -32,7 +32,7 @@ program
     .option('-c, --clean', "Cleanup destination directory before convert")
     .option('-n, --once', "Write only first time. Skip if already exists")
     .option('-m, --mode', "File permission to generate")
-    .action(function act(srcDir, destDir, options) {
+    .action((srcDir, destDir, options) => {
         tmplconv.tmplify(srcDir, destDir, options ,done);
     });
 
@@ -53,7 +53,7 @@ program
     .option('-c, --clean', "Cleanup destination directory before convert")
     .option('-n, --once', "Write only first time. Skip if already exists")
     .option('-m, --mode', "File permission to generate")
-    .action(function act(srcDir, destDir, options) {
+    .action((srcDir, destDir, options) => {
         tmplconv.render(srcDir, destDir, options ,done);
     });
 
@@ -71,7 +71,7 @@ program
     .option('-c, --clean', "Cleanup destination directory before convert")
     .option('-n, --once', "Write only first time. Skip if already exists")
     .option('-m, --mode', "File permission to generate")
-    .action(function act(src, dest, options) {
+    .action((src, dest, options) => {
         tmplconv.transplant(src, dest, options ,done);
     });
 
@@ -82,19 +82,21 @@ program.parse(process.argv);
 // Check sub command
 //=========================
 
-(function checkCommand(command) {
+{
+    let command = process.argv[2];
     if (!command) {
         program.outputHelp();
         return;
     }
-    var invalid = program.commands.map(function (command) {
+    let invalid = program.commands.map((command) => {
             return command.name();
         }).indexOf(command) === -1;
     if (invalid) {
         console.log("[tmplconv] '%s' is not an tmplconv command. See 'tmplconv --help'.", command);
     }
 
-})(process.argv[2]);
+};
+
 
 
 /** When command done. */

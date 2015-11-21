@@ -2,11 +2,12 @@
  * Test case for convertFile.
  * Runs with nodeunit.
  */
+"use strict";
 
-var convertFile = require('../lib/converting/convert_file.js'),
+const convertFile = require('../lib/converting/convert_file.js'),
     mkdirp = require('mkdirp');
 
-var tmpDir = __dirname + '/../tmp';
+const tmpDir = __dirname + '/../tmp';
 
 exports.setUp = function (done) {
     mkdirp.sync(tmpDir);
@@ -18,9 +19,9 @@ exports.tearDown = function (done) {
 };
 
 exports['Convert file'] = function (test) {
-    var src = String(__filename),
+    let src = String(__filename),
         dest = tmpDir + '/foo/bar/testing-converted.txt';
-    convertFile(src, dest, {}, function (err) {
+    convertFile(src, dest, {}, (err) => {
         test.ifError(err);
         test.done();
     });

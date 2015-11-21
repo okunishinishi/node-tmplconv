@@ -2,8 +2,9 @@
  * Test case for convertString.
  * Runs with nodeunit.
  */
+"use strict";
 
-var convertString = require('../lib/converting/convert_string.js');
+const convertString = require('../lib/converting/convert_string.js');
 
 exports.setUp = function (done) {
     done();
@@ -14,7 +15,7 @@ exports.tearDown = function (done) {
 };
 
 exports['Convert string'] = function (test) {
-    var converted = convertString('foo bar baz bar', {
+    let converted = convertString('foo bar baz bar', {
         bar: 'quz'
     });
     test.equal(converted, 'foo quz baz quz');

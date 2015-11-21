@@ -4,7 +4,7 @@
 
 "use strict";
 
-var apeTmpl = require('ape-tmpl'),
+const apeTmpl = require('ape-tmpl'),
     childProcess = require('child_process'),
     pkg = require('./package.json');
 

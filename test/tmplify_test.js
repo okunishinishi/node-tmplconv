@@ -2,11 +2,12 @@
  * Test case for tmplify.
  * Runs with nodeunit.
  */
+"use strict";
 
-var tmplify = require('../lib/tmplify.js'),
+const tmplify = require('../lib/tmplify.js'),
     mkdirp = require('mkdirp');
 
-var tmpDir = __dirname + '/../tmp';
+const tmpDir = __dirname + '/../tmp';
 
 exports.setUp = function (done) {
     mkdirp.sync(tmpDir);
@@ -18,14 +19,14 @@ exports.tearDown = function (done) {
 };
 
 exports['Tmplify'] = function (test) {
-    var srcDir = __dirname + '/../doc/mocks/mock-app',
+    let srcDir = __dirname + '/../doc/mocks/mock-app',
         destDir = tmpDir + '/testing-tmpl/mock-app-tmpl';
     tmplify(srcDir, destDir, {
         data: {
             "name": "my-awesome-app",
             "description": "This is an example for the app templates."
         }
-    }, function (err) {
+    }, (err) => {
         test.ifError(err);
         test.done();
     });

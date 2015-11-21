@@ -2,8 +2,9 @@
  * Test case for convert.
  * Runs with nodeunit.
  */
+"use strict";
 
-var convert = require('../lib/converting/convert.js');
+const convert = require('../lib/converting/convert.js');
 
 exports.setUp = function(done) {
     done();

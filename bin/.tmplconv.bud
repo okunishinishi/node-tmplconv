@@ -4,7 +4,7 @@
 
 "use strict";
 
-var apeTmpl = require('ape-tmpl');
+const apeTmpl = require('ape-tmpl');
 
 module.exports = apeTmpl.binBud({
     signature: require('../signature'),

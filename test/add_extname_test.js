@@ -2,8 +2,9 @@
  * Test case for addExtname.
  * Runs with nodeunit.
  */
+"use strict";
 
-var addExtname = require('../lib/naming/add_extname.js');
+const addExtname = require('../lib/naming/add_extname.js');
 
 exports.setUp = function (done) {
     done();

@@ -2,8 +2,9 @@
  * Test case for removeExtname.
  * Runs with nodeunit.
  */
+"use strict";
 
-var removeExtname = require('../lib/naming/remove_extname.js');
+const removeExtname = require('../lib/naming/remove_extname.js');
 
 exports.setUp = function(done) {
     done();
