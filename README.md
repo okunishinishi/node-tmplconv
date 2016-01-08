@@ -69,9 +69,9 @@ function ____name@camelcase____ () {
 <!-- Sections Start -->
 <a name="sections"></a>
 
-<!-- Section from "doc/readme/01.Installation.md.hbs" Start -->
+<!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
 
-<a name="section-doc-readme-01-installation-md"></a>
+<a name="section-doc-guides-01-installation-md"></a>
 Installation
 -----
 
@@ -80,11 +80,11 @@ npm install tmplconv --save-dev
 ```
 
 
-<!-- Section from "doc/readme/01.Installation.md.hbs" End -->
+<!-- Section from "doc/guides/01.Installation.md.hbs" End -->
 
-<!-- Section from "doc/readme/02.Render.md.hbs" Start -->
+<!-- Section from "doc/guides/02.Render.md.hbs" Start -->
 
-<a name="section-doc-readme-02-render-md"></a>
+<a name="section-doc-guides-02-render-md"></a>
 Render
 ---------
 
@@ -119,11 +119,11 @@ tmplconv.render('asset/app-tmpl', 'demo/demo-app', {
 
 
 
-<!-- Section from "doc/readme/02.Render.md.hbs" End -->
+<!-- Section from "doc/guides/02.Render.md.hbs" End -->
 
-<!-- Section from "doc/readme/03.Templify.md.hbs" Start -->
+<!-- Section from "doc/guides/03.Templify.md.hbs" Start -->
 
-<a name="section-doc-readme-03-templify-md"></a>
+<a name="section-doc-guides-03-templify-md"></a>
 Templify
 ---------
 
@@ -160,11 +160,11 @@ tmplconv.tmplify('demo/demo-app', 'asset/app-tmpl', {
 | mode | '644' | File permission to generate |
 
 
-<!-- Section from "doc/readme/03.Templify.md.hbs" End -->
+<!-- Section from "doc/guides/03.Templify.md.hbs" End -->
 
-<!-- Section from "doc/readme/04.CLI.md.hbs" Start -->
+<!-- Section from "doc/guides/04.CLI.md.hbs" Start -->
 
-<a name="section-doc-readme-04-c-l-i-md"></a>
+<a name="section-doc-guides-04-c-l-i-md"></a>
 Using with CLI
 ---------
 
@@ -198,7 +198,7 @@ $ tmplconv -h
 
 ```
 
-<!-- Section from "doc/readme/04.CLI.md.hbs" End -->
+<!-- Section from "doc/guides/04.CLI.md.hbs" End -->
 
 
 <!-- Sections Start -->

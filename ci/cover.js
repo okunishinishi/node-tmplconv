@@ -9,11 +9,12 @@
 process.chdir(__dirname + '/..');
 
 const apeTasking = require('ape-tasking'),
+    expandglob = require('expandglob'),
     apeCovering = require('ape-covering');
 
 apeTasking.runTasks('cover', [
     (callback) => {
-        apeCovering.measureCoverage('ci/test.js', [], {
+        apeCovering.measureCoverage('nodeunit', expandglob('test/*_test.js'), {
             dir: 'coverage'
         }, callback);
     }
