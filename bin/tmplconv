@@ -88,10 +88,17 @@ program.parse(process.argv);
         program.outputHelp();
         return;
     }
-    let invalid = program.commands.map((command) => {
-            return command.name();
-        }).indexOf(command) === -1;
-    if (invalid) {
+
+    let _isValid = name => {
+        for (let command of program.commands) {
+            let hit = (command.name() == name) || (command.alias() == name);
+            if(hit){
+                return true;
+            }
+        }
+        return false;
+    };
+    if (!_isValid(command)) {
         console.log("[tmplconv] '%s' is not an tmplconv command. See 'tmplconv --help'.", command);
     }
 
