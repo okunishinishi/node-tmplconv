@@ -1,22 +1,24 @@
 /**
  * Test case for addExtname.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const addExtname = require('../lib/naming/add_extname.js');
+const addExtname = require('../lib/naming/add_extname.js')
+const co = require('co')
+const assert = require('assert')
 
-exports.setUp = function (done) {
-    done();
-};
+before(() => co(function * () {
 
-exports.tearDown = function (done) {
-    done();
-};
+}))
 
-exports['Add extname'] = function (test) {
-    test.equal(addExtname('foo/bar/baz.txt', '.tmpl'), 'foo/bar/baz.txt.tmpl');
-    test.equal(addExtname('foo/bar/baz.txt.tmpl', '.tmpl'), 'foo/bar/baz.txt.tmpl');
-    test.done();
-};
+after(() => co(function * () {
+
+}))
+
+it('Add extname', () => co(function * () {
+  assert.equal(addExtname('foo/bar/baz.txt', '.tmpl'), 'foo/bar/baz.txt.tmpl')
+  assert.equal(addExtname('foo/bar/baz.txt.tmpl', '.tmpl'), 'foo/bar/baz.txt.tmpl')
+}))
+
 

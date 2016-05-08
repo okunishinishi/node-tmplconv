@@ -1,31 +1,28 @@
 /**
  * Test case for render.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
-"use strict";
+'use strict'
 
 const render = require('../lib/render.js'),
-    mkdirp = require('mkdirp');
-
+    mkdirp = require('mkdirp')
+const co = require('co')
+const assert = require('assert')
 const tmpDir = __dirname + '/../tmp';
 
-exports.setUp = function (done) {
-    mkdirp.sync(tmpDir);
-    done();
-};
+before(() => co(function *() {
+    mkdirp.sync(tmpDir)
+}))
 
 
-exports['Render'] = function(test){
-    let srcDir = __dirname + '/../doc/mocks/mock-app-tmpl',
-        destDir = tmpDir + '/testing-render/mock-app-generated';
-    render(srcDir, destDir, {
+it('Render', () => co(function *() {
+    let srcDir = __dirname + '/../doc/mocks/mock-app-tmpl';
+    let destDir = tmpDir + '/testing-render/mock-app-generated';
+    yield render(srcDir, destDir, {
         data: {
             "name": "my-awesome-app",
             "description": "This is an example for the app templates."
         }
-    }, (err) => {
-        test.ifError(err);
-        test.done();
-    });
-};
+    })
+}))
 

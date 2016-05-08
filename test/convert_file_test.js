@@ -1,29 +1,27 @@
 /**
  * Test case for convertFile.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const convertFile = require('../lib/converting/convert_file.js'),
-    mkdirp = require('mkdirp');
+const convertFile = require('../lib/converting/convert_file.js')
+const mkdirp = require('mkdirp')
+const co = require('co')
+const assert = require('assert')
 
 const tmpDir = __dirname + '/../tmp';
 
-exports.setUp = function (done) {
-    mkdirp.sync(tmpDir);
-    done();
-};
+before(() => co(function * () {
+  mkdirp.sync(tmpDir)
+}))
 
-exports.tearDown = function (done) {
-    done();
-};
+after(() => co(function * () {
 
-exports['Convert file'] = function (test) {
-    let src = String(__filename),
-        dest = tmpDir + '/foo/bar/testing-converted.txt';
-    convertFile(src, dest, {}, (err) => {
-        test.ifError(err);
-        test.done();
-    });
-};
+}))
+
+it('Convert file', () => co(function * () {
+  let src = String(__filename)
+  let dest = tmpDir + '/foo/bar/testing-converted.txt';
+  yield convertFile(src, dest, {})
+}))
 

@@ -1,24 +1,24 @@
 /**
  * Test case for convertString.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const convertString = require('../lib/converting/convert_string.js');
+const convertString = require('../lib/converting/convert_string.js')
+const co = require('co')
+const assert = require('assert')
+before(() => co(function * () {
 
-exports.setUp = function (done) {
-    done();
-};
+}))
 
-exports.tearDown = function (done) {
-    done();
-};
+after(() => co(function * () {
 
-exports['Convert string'] = function (test) {
-    let converted = convertString('foo bar baz bar', {
-        bar: 'quz'
-    });
-    test.equal(converted, 'foo quz baz quz');
-    test.done();
-};
+}))
+
+it('Convert string', () => co(function * () {
+  let converted = convertString('foo bar baz bar', {
+    bar: 'quz'
+  })
+  assert.equal(converted, 'foo quz baz quz')
+}))
 

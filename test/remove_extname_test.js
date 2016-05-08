@@ -1,22 +1,15 @@
 /**
  * Test case for removeExtname.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const removeExtname = require('../lib/naming/remove_extname.js');
+const removeExtname = require('../lib/naming/remove_extname.js')
+const co = require('co')
+const assert = require('assert')
 
-exports.setUp = function(done) {
-    done();
-};
-
-exports.tearDown = function(done) {
-    done();
-};
-
-exports['Remove extname'] = function(test){
-    test.equal(removeExtname('foo/bar/baz.txt.tmpl', '.tmpl'), 'foo/bar/baz.txt');
-    test.equal(removeExtname('foo/bar/baz.txt', '.tmpl'), 'foo/bar/baz.txt');
-    test.done();
-};
+it('Remove extname', () => co(function * () {
+  assert.equal(removeExtname('foo/bar/baz.txt.tmpl', '.tmpl'), 'foo/bar/baz.txt')
+  assert.equal(removeExtname('foo/bar/baz.txt', '.tmpl'), 'foo/bar/baz.txt')
+}))
 

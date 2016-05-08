@@ -1,37 +1,23 @@
 /**
  * Test case for convertDir.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const convertDir = require('../lib/converting/convert_dir.js'),
-    mkdirp = require('mkdirp');
+const convertDir = require('../lib/converting/convert_dir.js')
+const mkdirp = require('mkdirp')
+const co = require('co')
+const assert = require('assert')
 
 const tmpDir = __dirname + '/../tmp';
 
-exports.setUp = function (done) {
-    mkdirp.sync(tmpDir);
-    done();
-};
+before(() => co(function * () {
+  mkdirp.sync(tmpDir)
+}))
 
-exports.tearDown = function (done) {
-    done();
-};
-
-exports.setUp = function (done) {
-    done();
-};
-
-exports.tearDown = function (done) {
-    done();
-};
-
-exports['Convert dir'] = function (test) {
-    convertDir(__dirname, tmpDir + '/baz', {
-        pattern: '*.*'
-    }, (err) => {
-        test.ifError(err);
-        test.done();
-    });
-};
+it('Convert dir', () => co(function * () {
+  yield  convertDir(__dirname, tmpDir + '/baz', {
+    pattern: '*.*'
+  })
+}))
 
