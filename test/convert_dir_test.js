@@ -21,3 +21,4 @@ it('Convert dir', () => co(function * () {
   })
 }))
 
+/* global describe, before, after, it */

@@ -13,3 +13,4 @@ it('Remove extname', () => co(function * () {
   assert.equal(removeExtname('foo/bar/baz.txt', '.tmpl'), 'foo/bar/baz.txt')
 }))
 
+/* global describe, before, after, it */

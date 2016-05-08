@@ -26,3 +26,4 @@ it('Render', () => co(function *() {
     })
 }))
 
+/* global describe, before, after, it */

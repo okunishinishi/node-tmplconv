@@ -25,3 +25,4 @@ it('Convert file', () => co(function * () {
   yield convertFile(src, dest, {})
 }))
 
+/* global describe, before, after, it */

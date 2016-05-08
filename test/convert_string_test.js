@@ -22,3 +22,4 @@ it('Convert string', () => co(function * () {
   assert.equal(converted, 'foo quz baz quz')
 }))
 
+/* global describe, before, after, it */
