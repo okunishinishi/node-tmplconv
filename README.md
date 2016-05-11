@@ -180,6 +180,19 @@ Install as a global module.
 $ npm install tmplconv -g
 ```
 
+#### Text Converters
+
+You can use these functions to convert text before it is inserted into a template:
+* __camelcase:__ "hello world" --> "HelloWorld"
+* __pascalcase:__ "hello world" --> "helloWorld"
+* __spinalcase:__ "hello world" --> "hello-world"
+* __snakecase:__ "hello world" --> "hello_world"
+* __uppercase:__ "hello world" --> "HELLO WORLD"
+* __lowercase:__ "hello world" --> "hello world"
+* __enumcase:__ "hello world" --> "hello:world"
+
+
+
 #### CLI Usage:
 
 ```bash
