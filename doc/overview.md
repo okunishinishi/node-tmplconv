@@ -2,7 +2,7 @@
 **my_awesome_func.js**
 ```
 function myAwesomeFunc () {
-    /*...*/
+  /* ... */
 }
 ```
 
@@ -16,6 +16,6 @@ Tmplify  &nbsp;&nbsp;  Render
 
 ```
 function ____name@camelcase____ () {
-    /*...*/
+  /* ... */
 }
 ```
