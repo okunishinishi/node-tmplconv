@@ -46,7 +46,7 @@ Two way template converter.
 **my_awesome_func.js**
 ```
 function myAwesomeFunc () {
-    /*...*/
+  /* ... */
 }
 ```
 
@@ -60,7 +60,7 @@ Tmplify  &nbsp;&nbsp;  Render
 
 ```
 function ____name@camelcase____ () {
-    /*...*/
+  /* ... */
 }
 ```
 
@@ -87,7 +87,7 @@ npm install tmplconv --save-dev
 <!-- Section from "doc/guides/02.Render.md.hbs" Start -->
 
 <a name="section-doc-guides-02-render-md"></a>
-Render
+Render Files from Template
 ---------
 
 ```javascript
@@ -130,7 +130,7 @@ tmplconv.render('asset/app-tmpl', 'demo/demo-app', {
 <!-- Section from "doc/guides/03.Templify.md.hbs" Start -->
 
 <a name="section-doc-guides-03-templify-md"></a>
-Tmplify
+Generate Template from Existing Files
 ---------
 
 ```javascript
@@ -176,7 +176,8 @@ tmplconv.tmplify('demo/demo-app', 'asset/app-tmpl', {
 <!-- Section from "doc/guides/04.Conversion.md.hbs" Start -->
 
 <a name="section-doc-guides-04-conversion-md"></a>
-#### Conversion
+#### String Conversion
+
 
 You can use these functions to convert text before it is inserted into a template:
 
