@@ -173,9 +173,27 @@ tmplconv.tmplify('demo/demo-app', 'asset/app-tmpl', {
 
 <!-- Section from "doc/guides/03.Templify.md.hbs" End -->
 
-<!-- Section from "doc/guides/04.CLI.md.hbs" Start -->
+<!-- Section from "doc/guides/04.Conversion.md.hbs" Start -->
 
-<a name="section-doc-guides-04-c-l-i-md"></a>
+<a name="section-doc-guides-04-conversion-md"></a>
+#### Conversion
+
+You can use these functions to convert text before it is inserted into a template:
+
+* __camelcase:__ "hello world" --> "HelloWorld"
+* __pascalcase:__ "hello world" --> "helloWorld"
+* __spinalcase:__ "hello world" --> "hello-world"
+* __snakecase:__ "hello world" --> "hello_world"
+* __uppercase:__ "hello world" --> "HELLO WORLD"
+* __lowercase:__ "hello world" --> "hello world"
+* __enumcase:__ "hello world" --> "hello:world"
+
+
+<!-- Section from "doc/guides/04.Conversion.md.hbs" End -->
+
+<!-- Section from "doc/guides/05.CLI.md.hbs" Start -->
+
+<a name="section-doc-guides-05-c-l-i-md"></a>
 Using with CLI
 ---------
 
@@ -209,7 +227,7 @@ $ tmplconv -h
 
 ```
 
-<!-- Section from "doc/guides/04.CLI.md.hbs" End -->
+<!-- Section from "doc/guides/05.CLI.md.hbs" End -->
 
 
 <!-- Sections Start -->
