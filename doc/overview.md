@@ -8,7 +8,7 @@ function myAwesomeFunc () {
 
 &nbsp;&nbsp;   &darr;&darr;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &uarr;&uarr;
 
-Render  &nbsp;&nbsp;  Tmplify
+Tmplify  &nbsp;&nbsp;  Render
 
 &nbsp;&nbsp;   &darr;&darr;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &uarr;&uarr;
 

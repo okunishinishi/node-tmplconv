@@ -52,7 +52,7 @@ function myAwesomeFunc () {
 
 &nbsp;&nbsp;   &darr;&darr;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &uarr;&uarr;
 
-Render  &nbsp;&nbsp;  Tmplify
+Tmplify  &nbsp;&nbsp;  Render
 
 &nbsp;&nbsp;   &darr;&darr;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &uarr;&uarr;
 
@@ -95,7 +95,9 @@ Render
 
 const tmplconv = require('tmplconv')
 
+// Render files from existing template
 tmplconv.render('asset/app-tmpl', 'demo/demo-app', {
+  // Data to render
   data: {
     'name': 'my-awesome-app',
     'description': "This is an example for the app templates."
@@ -128,7 +130,7 @@ tmplconv.render('asset/app-tmpl', 'demo/demo-app', {
 <!-- Section from "doc/guides/03.Templify.md.hbs" Start -->
 
 <a name="section-doc-guides-03-templify-md"></a>
-Templify
+Tmplify
 ---------
 
 ```javascript
@@ -136,11 +138,14 @@ Templify
 
 const tmplconv = require('tmplconv')
 
+// Generate template from existing directory
 tmplconv.tmplify('demo/demo-app', 'asset/app-tmpl', {
+  // Patterns of files to tmplify
   pattern: [
     'lib/*.js',
     'test/*_test.js'
   ],
+  // Rule to tmplify
   data: {
     'name': 'my-awesome-app',
     'description': "This is an example for the app templates."
@@ -179,19 +184,6 @@ Install as a global module.
 ```bash
 $ npm install tmplconv -g
 ```
-
-#### Text Converters
-
-You can use these functions to convert text before it is inserted into a template:
-* __camelcase:__ "hello world" --> "HelloWorld"
-* __pascalcase:__ "hello world" --> "helloWorld"
-* __spinalcase:__ "hello world" --> "hello-world"
-* __snakecase:__ "hello world" --> "hello_world"
-* __uppercase:__ "hello world" --> "HELLO WORLD"
-* __lowercase:__ "hello world" --> "hello world"
-* __enumcase:__ "hello world" --> "hello:world"
-
-
 
 #### CLI Usage:
 
