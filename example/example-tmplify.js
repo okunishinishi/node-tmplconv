@@ -14,6 +14,6 @@ tmplconv.tmplify('demo/demo-app', 'asset/app-tmpl', {
     'name': 'my-awesome-app',
     'description': "This is an example for the app templates."
   }
-}).then(() => {
+}).then((result) => {
   /* ... */
 })
