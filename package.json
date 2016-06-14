@@ -1,6 +1,6 @@
 {
   "name": "tmplconv",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "Two way template converter.",
   "main": "lib",
   "bin": {
@@ -36,13 +36,13 @@
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.2",
     "stringcase": "^2.0.1",
-    "writeout": "^2.0.4"
+    "writeout": "^2.0.5"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
     "ape-releasing": "^3.1.1",
     "ape-reporting": "^3.0.1",
-    "ape-tasking": "^4.0.0",
+    "ape-tasking": "^4.0.1",
     "ape-testing": "^4.0.0",
     "ape-tmpl": "^5.0.2",
     "ape-updating": "^3.0.2",
