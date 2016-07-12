@@ -1,6 +1,6 @@
 {
   "name": "tmplconv",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "Two way template converter.",
   "main": "lib",
   "bin": {
@@ -30,14 +30,14 @@
     "asfs": "^1.0.5",
     "async": "^1.5.2",
     "co": "^4.6.0",
-    "colorprint": "^4.0.2",
+    "colorprint": "^4.0.5",
     "commander": "^2.9.0",
     "execcli": "^4.0.6",
     "findout": "^2.0.1",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.3",
     "stringcase": "^3.0.1",
-    "writeout": "^2.0.5"
+    "writeout": "^2.0.6"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
@@ -47,7 +47,7 @@
     "ape-testing": "^4.0.1",
     "ape-tmpl": "^5.0.12",
     "ape-updating": "^4.0.4",
-    "coz": "^6.0.4",
+    "coz": "^6.0.5",
     "injectmock": "^2.0.0"
   },
   "engines": {
