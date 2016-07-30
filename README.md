@@ -76,6 +76,7 @@ function ____name@camelcase____ () {
 <!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
 
 <a name="section-doc-guides-01-installation-md"></a>
+
 Installation
 -----
 
@@ -89,6 +90,7 @@ npm install tmplconv --save-dev
 <!-- Section from "doc/guides/02.Render.md.hbs" Start -->
 
 <a name="section-doc-guides-02-render-md"></a>
+
 Render Files from Template
 ---------
 
@@ -132,6 +134,7 @@ tmplconv.render('asset/app-tmpl', 'demo/demo-app', {
 <!-- Section from "doc/guides/03.Templify.md.hbs" Start -->
 
 <a name="section-doc-guides-03-templify-md"></a>
+
 Generate Template from Existing Files
 ---------
 
@@ -178,6 +181,7 @@ tmplconv.tmplify('demo/demo-app', 'asset/app-tmpl', {
 <!-- Section from "doc/guides/04.Conversion.md.hbs" Start -->
 
 <a name="section-doc-guides-04-conversion-md"></a>
+
 #### String Conversion
 
 
@@ -197,6 +201,7 @@ You can use these functions to convert text before it is inserted into a templat
 <!-- Section from "doc/guides/05.CLI.md.hbs" Start -->
 
 <a name="section-doc-guides-05-c-l-i-md"></a>
+
 Using with CLI
 ---------
 
