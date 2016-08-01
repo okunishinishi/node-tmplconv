@@ -26,11 +26,11 @@
   "homepage": "https://github.com/okunishinishi/node-tmplconv#readme",
   "dependencies": {
     "aglob": "^1.0.1",
-    "argx": "^3.0.0",
+    "argx": "^3.0.1",
     "asfs": "^1.0.5",
     "async": "^2.0.1",
     "co": "^4.6.0",
-    "colorprint": "^4.0.9",
+    "colorprint": "^4.0.11",
     "commander": "^2.9.0",
     "execcli": "^4.0.8",
     "findout": "^2.0.1",
@@ -40,9 +40,9 @@
     "writeout": "^2.0.7"
   },
   "devDependencies": {
-    "amocha": "^1.0.10",
+    "amocha": "^1.0.11",
     "ape-releasing": "^4.0.4",
-    "ape-reporting": "^3.0.1",
+    "ape-reporting": "^3.0.2",
     "ape-tasking": "^4.0.8",
     "ape-tmpl": "^5.0.15",
     "ape-updating": "^4.0.5",
