@@ -2,15 +2,16 @@
  * Bud file for bin.
  */
 
-"use strict";
+'use strict'
 
-const apeTmpl = require('ape-tmpl');
+const apeTmpl = require('ape-tmpl')
 
 module.exports = apeTmpl.binBud({
-    signature: require('../signature'),
-    path: 'tmplconv'
-});
+  signature: require('../signature'),
+  path: 'tmplconv',
+  lib: '../shim/node'
+})
 
 if (!module.parent) {
-    require('coz').render(__filename);
+  require('coz').render(__filename)
 }
