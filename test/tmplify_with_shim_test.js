@@ -7,7 +7,7 @@
 const tmplify = require('../shim/node/tmplify.js')
 const mkdirp = require('mkdirp')
 
-const tmpDir = __dirname + '/../tmp'
+const tmpDir = `${__dirname}/../tmp`
 const co = require('co')
 const assert = require('assert')
 const fs = require('fs')
@@ -18,12 +18,12 @@ describe('tmplify', function () {
   }))
 
   it('Tmplify', () => co(function * () {
-    let srcDir = __dirname + '/../doc/mocks/mock-app'
-    let destDir = tmpDir + '/testing-tmpl/mock-app-tmpl'
+    let srcDir = `${__dirname}/../doc/mocks/mock-app`
+    let destDir = tmpDir + '/testing-tmpl/mock-app-tmpl-with-shim'
     yield tmplify(srcDir, destDir, {
       data: {
-        "name": "my-awesome-app",
-        "description": "This is an example for the app templates."
+        'name': 'my-awesome-app',
+        'description': 'This is an example for the app templates.'
       }
     })
     assert.ok(
@@ -33,11 +33,10 @@ describe('tmplify', function () {
       `${tmpDir}/testing-tmpl/mock-app-tmpl/package.json.tmpl`
     ).toString())
     assert.deepEqual(data, {
-        name: '_____name_____',
-        version: '1.0.0',
-        description: '_____description_____'
-      }
-    )
+      name: '_____name_____',
+      version: '1.0.0',
+      description: '_____description_____'
+    })
   }))
 
 })

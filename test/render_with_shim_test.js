@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const render = require('../lib/render.js')
+const render = require('../shim/node/render.js')
 const mkdirp = require('mkdirp')
 const co = require('co')
 const assert = require('assert')
