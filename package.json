@@ -49,6 +49,7 @@
     "ape-tasking": "^4.0.8",
     "ape-tmpl": "^5.0.16",
     "ape-updating": "^4.0.5",
+    "babel-polyfill": "^6.13.0",
     "coz": "^6.0.16",
     "injectmock": "^2.0.0"
   },
