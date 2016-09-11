@@ -4,26 +4,27 @@
  */
 'use strict'
 
-const render = require('../lib/render.js'),
-    mkdirp = require('mkdirp')
+const render = require('../lib/render.js')
+const mkdirp = require('mkdirp')
 const co = require('co')
 const assert = require('assert')
-const tmpDir = __dirname + '/../tmp';
+const tmpDir = __dirname + '/../tmp'
 
-before(() => co(function *() {
+describe('render', () => {
+  before(() => co(function * () {
     mkdirp.sync(tmpDir)
-}))
+  }))
 
-
-it('Render', () => co(function *() {
-    let srcDir = __dirname + '/../doc/mocks/mock-app-tmpl';
-    let destDir = tmpDir + '/testing-render/mock-app-generated';
+  it('Render', () => co(function * () {
+    let srcDir = __dirname + '/../doc/mocks/mock-app-tmpl'
+    let destDir = tmpDir + '/testing-render/mock-app-generated'
     yield render(srcDir, destDir, {
-        data: {
-            "name": "my-awesome-app",
-            "description": "This is an example for the app templates."
-        }
+      data: {
+        "name": "my-awesome-app",
+        "description": "This is an example for the app templates."
+      }
     })
-}))
+  }))
+})
 
 /* global describe, before, after, it */
