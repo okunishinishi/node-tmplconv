@@ -26,18 +26,19 @@
   },
   "homepage": "https://github.com/okunishinishi/node-tmplconv#readme",
   "dependencies": {
-    "aglob": "^1.0.1",
-    "argx": "^3.0.1",
-    "asfs": "^1.0.5",
+    "aglob": "^1.1.1",
+    "argx": "^3.0.2",
+    "asfs": "^1.1.0",
+    "babel-runtime": "^6.11.6",
     "co": "^4.6.0",
-    "colorprint": "^4.0.11",
+    "colorprint": "^4.1.0",
     "commander": "^2.9.0",
-    "execcli": "^4.0.8",
-    "findout": "^2.0.1",
+    "execcli": "^4.0.9",
+    "findout": "^2.1.1",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.4",
-    "stringcase": "^3.1.0",
-    "writeout": "^2.0.7"
+    "stringcase": "^3.1.1",
+    "writeout": "^2.1.0"
   },
   "devDependencies": {
     "ababel": "^1.1.2",
