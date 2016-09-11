@@ -28,7 +28,11 @@ module.exports = apeTmpl.readmeMdBud({
       get help () {
         let execSync = childProcess.execSync
         let bin = require.resolve('./bin/tmplconv')
-        return execSync && execSync(bin + ' -h')
+        try {
+          return execSync && execSync(bin + ' -h')
+        } catch (e) {
+          return ''
+        }
       }
     }
   }
