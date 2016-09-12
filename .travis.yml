@@ -5,11 +5,10 @@ node_js:
 - '5'
 - '6'
 
+before_install:
+- npm install mocha -g
 install:
 - npm install
 
 script:
-- ./ci/build.js
-- ./ci/test.js
-- ./ci/cover.js
-- ./ci/report.js
+- mocha test
