@@ -41,15 +41,16 @@
     "writeout": "^2.1.0"
   },
   "devDependencies": {
-    "ababel": "^1.1.7",
-    "ababel-es2015": "^1.0.7",
+    "ababel": "^1.1.8",
+    "ababel-es2015": "^1.0.8",
     "amocha": "^1.0.15",
     "ape-releasing": "^4.0.4",
     "ape-reporting": "^3.0.2",
     "ape-tasking": "^4.0.9",
-    "ape-tmpl": "^5.0.18",
+    "ape-tmpl": "^5.0.19",
     "ape-updating": "^4.0.5",
     "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.14.0",
     "coz": "^6.0.16",
     "injectmock": "^2.0.0"
   },
