@@ -7,17 +7,17 @@ const transplant = require('../lib/transplant.js')
 const mkdirp = require('mkdirp')
 
 const tmpDir = __dirname + '/../tmp'
-const co = require('co')
+
 const fs = require('fs')
 const assert = require('assert')
-before(() => co(function * () {
+before(async () => {
   mkdirp.sync(tmpDir)
-}))
+})
 
-it('Transplant', () => co(function * () {
+it('Transplant', async () => {
   let srcDir = __dirname + '/../doc/mocks/mock-app'
   let destDir = tmpDir + '/testing-transplanted/mock-app-transplanted'
-  yield transplant(srcDir, destDir, {
+  await transplant(srcDir, destDir, {
     rule: {
       "my-awesome-app": "hey-yo",
       "This is an example for the app templates.": "This transplanted template"
@@ -31,6 +31,6 @@ it('Transplant', () => co(function * () {
     "version": "1.0.0",
     "description": "This transplanted template"
   })
-}))
+})
 
 /* global describe, before, after, it */

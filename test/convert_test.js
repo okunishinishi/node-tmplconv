@@ -6,20 +6,20 @@
 
 const convert = require('../lib/converting/convert.js')
 const assert = require('assert')
-const co = require('co')
+
 
 describe('convert', () => {
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Convert', () => co(function * () {
+  it('Convert', async () => {
 
-  }))
+  })
 })
 
 /* global describe, before, after, it */

@@ -8,19 +8,19 @@ const tmplify = require('../lib/tmplify.js')
 const mkdirp = require('mkdirp')
 
 const tmpDir = __dirname + '/../tmp';
-const co = require('co')
+
 const assert = require('assert')
 const fs = require('fs')
 
 describe('tmplify', function () {
-  before(() => co(function * () {
+  before(async () => {
     mkdirp.sync(tmpDir)
-  }))
+  })
 
-  it('Tmplify', () => co(function * () {
+  it('Tmplify', async () => {
     let srcDir = __dirname + '/../doc/mocks/mock-app'
     let destDir = tmpDir + '/testing-tmpl/mock-app-tmpl'
-    yield tmplify(srcDir, destDir, {
+    await tmplify(srcDir, destDir, {
       data: {
         "name": "my-awesome-app",
         "description": "This is an example for the app templates."
@@ -38,7 +38,7 @@ describe('tmplify', function () {
         description: '_____description_____'
       }
     )
-  }))
+  })
 
 })
 

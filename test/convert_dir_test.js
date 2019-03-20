@@ -2,23 +2,23 @@
  * Test case for convertDir.
  * Runs with mocha.
  */
-'use strict'
+"use strict";
 
-const convertDir = require('../lib/converting/convert_dir.js')
-const mkdirp = require('mkdirp')
-const co = require('co')
-const assert = require('assert')
+const convertDir = require("../lib/converting/convert_dir.js");
+const mkdirp = require("mkdirp");
 
-const tmpDir = __dirname + '/../tmp';
+const assert = require("assert");
 
-before(() => co(function * () {
-  mkdirp.sync(tmpDir)
-}))
+const tmpDir = __dirname + "/../tmp";
 
-it('Convert dir', () => co(function * () {
-  yield  convertDir(__dirname, tmpDir + '/baz', {
-    pattern: '*.*'
-  })
-}))
+before(async () => {
+  mkdirp.sync(tmpDir);
+});
+
+it("Convert dir", async () => {
+  await convertDir(__dirname, tmpDir + "/baz", {
+    pattern: "*.*"
+  });
+});
 
 /* global describe, before, after, it */
