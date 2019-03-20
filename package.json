@@ -1,6 +1,6 @@
 {
   "name": "tmplconv",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Two way template converter.",
   "main": "lib",
   "bin": {
@@ -50,7 +50,7 @@
     "injectmock": "^2.0.0"
   },
   "engines": {
-    "node": ">=4",
-    "npm": ">=2"
+    "node": ">=8",
+    "npm": ">=5"
   }
 }
